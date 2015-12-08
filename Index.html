@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Keywords finder</title>
+    <meta name="description" content="Keywords Finder Open Source, find the most revelent keywords related to a keyword." />
+    <meta name="keywords" content="keywords, keywords SEO, keywords opsimisation" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="css/datatables/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="css/DataTables/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <input id="gg-lang" type="hidden" value="en" />
+            <div class="row panel-keyword">
+                <div class="col-xs-12">
+                    <input id="search" type="text" class="form-control input-lg text-center" placeholder="Enter a keyword" aria-describedby="startjob">
+                </div>
+                <div class="col-xs-12 text-center">
+                    <label class="radio-inline">
+                        <input type="radio" name="MethodOptions" id="Method1" value="1"> Method 1
+                    </label>
+                    <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#MethodModal1">?</button>
+                    <label class="radio-inline">
+                        <input type="radio" name="MethodOptions" id="Method2" value="2" checked> Method 2
+                    </label>
+                    <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#MethodModal2">?</button>
+                </div>
+                <div class="col-xs-12 text-center padding-top">
+                    <div role="group" class="btn-group">
+                        <div class="btn-group" role="group">
+                            <button role="group" type="button" class="btn btn-default btn-group dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="lang">English</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu scrollable-menu select-lang">
+                                <li data-lang="">Any language</li>
+                                <li data-lang="af">Afrikaans</li>
+                                <li data-lang="sq">Albanian (Shqip)</li>
+                                <li data-lang="sm">Amharic</li>
+                                <li data-lang="ar">Arabic (العربية)</li>
+                                <li data-lang="az">Azerbaijani (Azərbaycanca)</li>
+                                <li data-lang="eu">Basque (Euskal)</li>
+                                <li data-lang="be">Belarusian (Беларуская)</li>
+                                <li data-lang="bn">Bengali (বাঙ্গালী)</li>
+                                <li data-lang="bh">Bihari (বিহারী)</li>
+                                <li data-lang="bs">Bosnian (Bosanski)</li>
+                                <li data-lang="bg">Bulgarian (Български)</li>
+                                <li data-lang="ca">Catalan (Català)</li>
+                                <li data-lang="zh-CN">Chinese - Simplified (中国 - 简体)</li>
+                                <li data-lang="zh-TW">Chinese - Traditional (中文 - 繁體)</li>
+                                <li data-lang="hr">Croatian (Hrvatski)</li>
+                                <li data-lang="cs">Czech (Čeština)</li>
+                                <li data-lang="da">Danish (Dansk)</li>
+                                <li data-lang="nl">Dutch (Nederlands)</li>
+                                <li data-lang="en">English</li>
+                                <li data-lang="eo">Esperanto</li>
+                                <li data-lang="et">Estonian (Eesti)</li>
+                                <li data-lang="fo">Faroese (Føroyskt)</li>
+                                <li data-lang="fi">Finnish (Suomi)</li>
+                                <li data-lang="fr" selected="selected">French (Français)</li>
+                                <li data-lang="fy">Frisian</li>
+                                <li data-lang="gl">Galician (Galego)</li>
+                                <li data-lang="ka">Georgian (ქართული)</li>
+                                <li data-lang="de">German (Deutsch)</li>
+                                <li data-lang="el">Greek (ελληνικά)</li>
+                                <li data-lang="gu">Gujarati (ગુજરાતી)</li>
+                                <li data-lang="iw">Hebrew (עברית)</li>
+                                <li data-lang="hi">Hindi (हिंदी)</li>
+                                <li data-lang="hu">Hungarian (Magyar)</li>
+                                <li data-lang="is">Icelandic</li>
+                                <li data-lang="id">Indonesian (Bahasa Indonesia)</li>
+                                <li data-lang="ia">Interlingua</li>
+                                <li data-lang="ga">Irish (Gaeilge)</li>
+                                <li data-lang="it">Italian (Italiano)</li>
+                                <li data-lang="ja">Japanese (日本語)</li>
+                                <li data-lang="jw">Javanese (Jawa)</li>
+                                <li data-lang="kn">Kannada (ಕನ್ನಡ)</li>
+                                <li data-lang="ko">Korean (한국어)</li>
+                                <li data-lang="la">Latin (Latine)</li>
+                                <li data-lang="lv">Latvian (Latviešu Valoda)</li>
+                                <li data-lang="lt">Lithuanian (Lietuvių Kalba)</li>
+                                <li data-lang="mk">Macedonian (Македонски Јазик)</li>
+                                <li data-lang="ms">Malay (Bahasa Melayu)</li>
+                                <li data-lang="ml">Malayam (മലയാളം)</li>
+                                <li data-lang="mt">Maltese (Malti)</li>
+                                <li data-lang="mr">Marathi (मराठी)</li>
+                                <li data-lang="ne">Nepali (नेपाली)</li>
+                                <li data-lang="no">Norwegian (Norsk)</li>
+                                <li data-lang="nn">Norwegian (Nynorsk)</li>
+                                <li data-lang="oc">Occitan (Lenga d&amp;#039;òc)</li>
+                                <li data-lang="fa">Persian (فارسی)</li>
+                                <li data-lang="pl">Polish (Polski)</li>
+                                <li data-lang="pt-BR">Portuguese - Brazil (Português - Brasil)</li>
+                                <li data-lang="pt-PT">Portuguese - Portugal (Português - Portugal)</li>
+                                <li data-lang="pa">Punjabi (ਪੰਜਾਬੀ ਦੇ)</li>
+                                <li data-lang="ro">Romanian (Român)</li>
+                                <li data-lang="ru">Russian (Русский)</li>
+                                <li data-lang="gd">Scottish Gaelic (Gàidhlig)</li>
+                                <li data-lang="sr">Serbian (Cрпски)</li>
+                                <li data-lang="si ">Sinhalese (සිංහල)</li>
+                                <li data-lang="sk">Slovak (Slovenský)</li>
+                                <li data-lang="sl">Slovenian (Slovenščina)</li>
+                                <li data-lang="es">Spanish (Español)</li>
+                                <li data-lang="su">Sudanese</li>
+                                <li data-lang="sw">Swahili (Kiswahili)</li>
+                                <li data-lang="sv">Swedish (Svenska)</li>
+                                <li data-lang="tl">Tagalog</li>
+                                <li data-lang="ta">Tamil (தமிழ்)</li>
+                                <li data-lang="te">Telugu</li>
+                                <li data-lang="th">Thai (ภาษาไทย)</li>
+                                <li data-lang="ti">Tigrinya (ትግርኛ)</li>
+                                <li data-lang="tr">Turkish (Türk)</li>
+                                <li data-lang="uk">Ukrainian (Українська)</li>
+                                <li data-lang="ur">Urdu (اُردُو‎)</li>
+                                <li data-lang="uz">Uzbek (O’zbekcha)</li>
+                                <li data-lang="vi">Vietnamese (Việt)</li>
+                                <li data-lang="cy">Welsh (Cymraeg)</li>
+                                <li data-lang="xh">Xhosa</li>
+                                <li data-lang="zu">Zulu</li>
+                            </ul>
+                        </div>
+                        <button role="group" id="startjob" class="btn btn-primary" type="button">Find Keywords</button>
+                    </div>
+                </div>
+                <div class="col-xs-12 padding-top hidden">
+                    <div class="alert alert-warning text-center" role="alert"><h2 id="keywordtoquery"></h2></div>
+                </div>
+                <div class="col-md-4 hidden">
+                    <div class="well text-center"><div>Done</div><h3><span class="label label-warning" id="done"></span></h3></div>
+                </div>
+                <div class="col-md-4 hidden">
+                    <div class="well text-center">To Do<br /><h3><span class="label label-danger" id="to-do"></span></h3></div>
+                </div>
+                <div class="col-md-4 hidden">
+                    <div class="well text-center">Found<br /><h3><span class="label label-success" id="keywordsCounter"></span></h3></div>
+                </div>
+            </div>
+            <div class="progress progress-striped active hidden">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+        </div>
+        <div class="row hidden">
+            <div class="col-md-12">
+                <table cellpadding="0" cellspacing="0" border="0" class="table table-striped dt-responsive nowrap" id="example"></table>
+            </div>
+            <div id="result" class="col-md-12">
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <!--Don't remove this link it's a part of the open source licence http://creativecommons.org/licenses/by-sa/3.0/ -->
+            <p class="text-center">Keyword Finder by <a href="http://keywords.zone">Keywords.Zone</a></p>
+            <!--Don't remove this link it's a part of the open source licence http://creativecommons.org/licenses/by-sa/3.0/ -->
+        </footer>
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/datatables/jquery.dataTables.js"></script>
+    <script src="js/DataTables/dataTables.buttons.js"></script>
+    <script src="js/DataTables/buttons.html5.js"></script>    
+    <script src="js/jquery.keywords.finder.js"></script>
+    <script type="text/javascript">
+
+        window.setInterval($().DoJob, 750);
+
+        $("#startjob").on("click", function () {
+            $(".hidden").removeClass("hidden");
+            if ($("input[name=MethodOptions]:checked").val() == 1) {
+                $().StartJobMethod1();
+            }
+            else {
+                $().StartJobMethod2();
+            }
+        });
+        $(".select-lang li").on("click", function () {
+            $("#lang").html($(this).html());
+            $("#gg-lang").val($(this).data("lang"));
+        });
+
+    </script>
+</body>
+</html>
