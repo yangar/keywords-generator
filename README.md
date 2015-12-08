@@ -1,5 +1,5 @@
 # Keywords-generator
-Jquery Keywords Generator, The script use Google Suggest API to list related keywords, demo is available on <a target="_blank" href="http://keywords.zone">Keywords.Zone</a>
+Jquery Keywords Generator is a script which use Google Suggest API to create a list of related keywords, demo is available on <a target="_blank" href="http://keywords.zone">Keywords.Zone</a>
 
 #Dependancy
 Jquery:<br />
